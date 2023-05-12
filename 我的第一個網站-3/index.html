@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清單及表格</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>有序清單:ol>li</h1>
+    <!-- 快捷鍵 ol>li{清單項目}*5 -->
+    <ol>
+        <li>清單項目</li>
+        <li>清單項目</li>
+        <li>清單項目</li>
+        <li>清單項目</li>
+        <li>清單項目</li>
+    </ol>
+    <h1>無序清單:ul>li</h1>
+    <ul type="square">
+        <li>項目</li>
+        <li>項目</li>
+        <li>項目</li>
+        <li>項目</li>
+        <li>項目</li>
+    </ul>
+    <ul type="circle">
+        <li>項目</li>
+        <li>項目</li>
+        <li>項目</li>
+    </ul>
+    <h1>表格 table tr>td</h1>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>qty</th>
+            <th>price</th>
+            <th>note</th>
+        </tr>
+        <tr>
+            <td>商品1</td>
+            <td>10</td>
+            <td class="price">100</td>
+            <td>備註一</td>
+
+        </tr>
+        <tr>
+            <td>商品2</td>
+            <td>20</td>
+            <td class="price">150</td>
+            <td>備註一</td>
+
+        </tr>
+        <tr>
+            <td>商品3</td>
+            <td>30</td>
+            <td class="price">250</td>
+            <td>備註一</td>
+
+        </tr>
+    </table>
+    <br>
+
+    <form action="/index.html" method="POST">
+
+        <label for="name">姓名</label>
+        <input type="text" name="name" placeholder="請輸入文字">
+        <br>
+        <span>性別:</span>
+        <label for="male">男</label>
+        <input type="radio" name="sex" id="sex">
+        <label for="female">女</label>
+        <input type="radio" name="sex" id="sex">
+        <br>
+        <label for="habit">興趣(可複選)</label>
+        <input type="checkbox" name="habit" value="swimming">
+        <label for="swimming">游泳</label>
+        <input type="checkbox" name="habit" value="football">
+        <label for="football">足球</label>
+        <input type="checkbox" name="habit" value="baseball">
+        <label for="baseball">棒球</label>
+        <input type="checkbox" name="habit" value="running">
+        <label for="running">跑步</label>
+        <input type="checkbox" name="habit" value="reading">
+        <label for="reading">閱讀</label>
+        <br>
+        <label for="food">請選擇喜歡的食物</label>
+        <select name="food" id="food">
+            <option value="請選擇">請選擇</option>
+            <option value="pizza">披薩</option>
+            <option value="sushi">壽司</option>
+            <option value="vegetable">蔬菜</option>
+            <option value="hamburger">漢堡</option>
+        </select>
+
+
+
+    </form>
+
+</body>
+
+</html>
