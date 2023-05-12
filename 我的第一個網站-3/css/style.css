@@ -1,0 +1,31 @@
+table,
+td,
+th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    /* border-collapse: collapse; 框線合為一體 */
+}
+
+td,
+th {
+    padding: 8px 20px;
+}
+
+.price {
+    text-align: right;
+    /* 靠右對齊 */
+
+    /* 補充特定文字 */
+
+}
+
+/* 補充特定文字 在前面 */
+.price:before {
+    content: "$ ";
+}
+
+/* 補充特定文字 在後面 */
+.price:after {
+    content: "NTD";
+    margin-left: 5px;
+}

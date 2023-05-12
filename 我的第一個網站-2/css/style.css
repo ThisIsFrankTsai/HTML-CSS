@@ -1,0 +1,69 @@
+body {
+    /* 使用微軟正黑體 */
+    font-family: 'Microsoft Jhenghei';
+}
+
+/*============ cards 頁面 ============*/
+
+/* 邊寬 粗細 樣式 顏色 */
+* {
+    /* border: 1px solid black; */
+}
+
+.card-list {
+
+    display: flex;
+    /* 預設會換行 */
+    /* justify-content: :flex-end;靠右  */
+    /* justify-content: flex-start; */
+    /* 靠左 */
+    justify-content: center;
+    /* 置中 */
+
+    flex-wrap: wrap;
+    /* 不隨著瀏覽器大小更動而變動 */
+
+}
+
+/* 板塊card 的寬調成300 */
+.card {
+    width: 300px;
+    margin: 15px;
+    box-shadow: 5px 5px 8px rgb(156, 153, 153);
+    /* 左右 上下 模糊程度 顏色 */
+
+    transition: all .3s ease;
+    /* 漸變  all (所有css 屬性) 幾秒 */
+
+    border-radius: 18px;
+    /* 圓角 */
+    overflow: hidden;
+    /* 圓角蓋過去 */
+}
+
+/*滑鼠移動後改變  */
+.card:hover {
+    box-shadow: 5px 5px 18px rgb(75, 73, 73);
+    border-radius: 15px;
+}
+
+/* 100%板塊所在的容器 隨class card-img 變動 */
+.card-img {
+    width: 100%;
+    display: block;
+    /* border-top-right-radius: 18px; */
+}
+
+.card-body {
+    padding: 20px 20px;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}

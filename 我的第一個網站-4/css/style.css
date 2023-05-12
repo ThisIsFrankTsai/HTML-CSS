@@ -1,0 +1,75 @@
+/* 當選擇器一樣的時候，發生屬性衝突，寫在越後面的會生效 */
+/* 當選擇器不一樣的時候，發生屬性衝突，選擇器的等級越高會生效 */
+/* 選擇器等級由低到高:* < tag(h1) < class(.) < id(#) */
+/* 選的越精確等級越高 */
+
+/* inline-style < !important */
+/* 極度不推薦 */
+/* 舊的教材:HTML中使用CSS混合語言，難閱讀，無法重複使用，等級太高非常麻煩， */
+
+#title1 {
+    color: steelblue;
+    font-size: 100px;
+}
+
+.title {
+    color: orange;
+}
+
+#title1 {
+    color: purple;
+}
+
+.fa-stamp {
+    color: orange;
+}
+
+.fa-scissors {
+    font-size: 40px;
+    text-shadow: 3px 3px 0px black;
+}
+
+h1,
+h2,
+{
+color: red;
+}
+
+/* container>p 選container裡【第一層】的p */
+.container>p {
+    background: tomato;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+
+/* container p 選container裡全部的p*/
+.container {
+    font-size: 50px;
+}
+
+/* container+p 選緊接在.container後面的第一個p */
+.container+p {
+    color: red;
+}
+
+/* h3,h4 選h3跟h4 */
+h3,
+h4 {
+    color: aquamarine;
+    font-size: 50px
+}
+
+.card-list {
+    width: 400px;
+    height: 1000px;
+    border: 30px solid rgb(38, 171, 189);
+    display: flex;
+}
+
+.card {
+    width: 250px;
+    height: 500px;
+    border: 10px solid rgb(228, 136, 136);
+
+}
