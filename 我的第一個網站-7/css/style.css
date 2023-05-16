@@ -1,0 +1,293 @@
+button {
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+.navbar {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: rgb(221, 141, 141);
+    box-shadow: 0px 5px 20px rgb(209, 177, 177);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* display:flex 橫著排 */
+/* justify-content:space-between 一個元素在左 一個在右 */
+/* align-items:上下置中 */
+/*  */
+
+.navbar a {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+}
+
+/* list 中的a 右側留白 */
+.list a {
+    margin-right: 15px;
+}
+
+/* 最後一個不留白 */
+.list a:last-child {
+    margin-right: 0;
+}
+
+/* 平常看不到 */
+.toggler {
+    display: none;
+}
+
+/* 定義小於600px螢幕寬度就是手機版 */
+@media(max-width:1000px) {
+    .list {
+        position: fixed;
+        left: -200px;
+        top: 0px;
+        background-color: bisque;
+        width: 200px;
+        height: 100vh;
+        transition: all .3s ease-in;
+    }
+
+    /* 選到同時擁有list、active的元素 */
+    .list.active {
+        left: 0;
+    }
+
+    .list a {
+        display: block;
+        padding: 15px 15px;
+    }
+
+    .toggler {
+        display: block;
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .line {
+        width: 20px;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .line:after,
+    .line:before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: white;
+        display: block;
+        position: absolute;
+    }
+
+    .line:after {
+        top: 5px;
+    }
+
+    .line:before {
+        bottom: 5px;
+    }
+
+    .line,
+    .line:after,
+    .line:before {
+        transition: all .3s ease;
+    }
+
+    .line.active {
+        transform: rotate(45deg);
+    }
+
+    .line.active:after {
+        top: 0px;
+    }
+
+    .line.active:before {
+        transform: rotate(270deg);
+        bottom: 0px;
+    }
+
+}
+
+
+
+/* fixed浮起來 */
+/* 固定確切位置，到畫面的左上角 */
+.relative {
+    /* btn預設有border */
+    border: none;
+    height: 100px;
+    width: 100px;
+    /* 文字顏色 */
+    color: aqua;
+    padding: 0 20px;
+    background: orange;
+    /* cursor 指的是移動到button會出現手指 */
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px rgb(214, 118, 118);
+    /* 預設position:static 會使定位屬性失效 */
+    position: relative;
+    /* 定位屬性 */
+    /* 由上邊往下推 */
+    /* top: 10px; */
+    /* 由左往右推 */
+    /* left: 10px; */
+    /* buttom:由下往上推 */
+    /* bottom: 0px; */
+    /* right:由右往左推 */
+    transition: all 1.5s ease-out;
+
+}
+
+.relative:hover {
+    background: rgb(199, 128, 128);
+    box-shadow: 0px 15px 15px rgb(88, 80, 80);
+    bottom: 20px;
+}
+
+.outer {
+    width: 200px;
+    height: 200px;
+    color: rgb(245, 1, 1);
+    background: rgb(199, 186, 186);
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 5px 5px rgb(88, 80, 80);
+}
+
+.inner1 {
+    width: 80px;
+    height: 80px;
+    color: aquamarine;
+    background: rgb(104, 45, 45);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgb(88, 80, 80);
+}
+
+
+.inner {
+    width: 80px;
+    height: 80px;
+    color: aquamarine;
+    background: rgb(104, 45, 45);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgb(88, 80, 80);
+    position: absolute;
+    /* 設定absolute會使元素飄在空中，使得原本在下方的text往上補位 */
+    right: 0px;
+    bottom: 0px;
+    /* 此時，定位元素會定位到上層元素的右上角 */
+}
+
+/* 左右 auto會自動置中 但是上下不會 */
+/* 先設定上下左右的邊界，在使用auto 使其自動置中 */
+/* z軸會使其跑到前面 */
+.center {
+    width: 80px;
+    height: 80px;
+    color: aquamarine;
+    background: rgb(207, 162, 162);
+    border-radius: 5px;
+    position: absolute;
+    margin: auto auto;
+    left: 0;
+    right: 0px;
+    top: 0;
+    bottom: 0px;
+    z-index: 2;
+}
+
+
+.card {
+    width: 300px;
+    box-shadow: 0 2px 3px rgba(250, 3, 3, 0.2), 0 0 0 0px rgba(255, 99, 71, 0);
+    transition: all .3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 25px 20px rgba(211, 78, 78, 0.2), 0 0 0 3px rgba(255, 99, 71, 1);
+}
+
+.card-btns {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+/* 當card被hover，設定card裡面的card-btn的樣式 */
+.card:hover .card-btns {
+    right: 15px;
+}
+
+.card-img {
+    display: block;
+    filter: brightness(1);
+    transition: all .93s ease;
+}
+
+/* absolute 會導致文字跑上來，跑版 */
+/* overflow溢出處理設定，當內部元素超出時，不顯示，且點不到 */
+.card-header {
+    position: relative;
+}
+
+.card-body {
+    padding: 10px 10px;
+}
+
+/* card-btns 中的button標籤 */
+.card-btns button {
+    color: green;
+    font-size: 23px;
+    border: none;
+    opacity: .7;
+    background-color: transparent;
+    transition: all .3s ease;
+    position: relative;
+    bottom: 0px;
+}
+
+.card-btns button:hover {
+    opacity: 1;
+    bottom: 10px;
+}
+
+.card-header1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-btns1 {
+    position: absolute;
+    right: -200px;
+    bottom: 15px;
+    transition: all 0.3s cubic-bezier(0, 2.42, .88, 1.42);
+}
+
+.card-btns1 button {
+    color: green;
+    font-size: 23px;
+    border: none;
+    opacity: .7;
+    background-color: transparent;
+    transition: all .9s ease;
+    position: relative;
+    bottom: 0px;
+}
+
+.card:hover .card-btns1 {
+    right: 15px;
+}
